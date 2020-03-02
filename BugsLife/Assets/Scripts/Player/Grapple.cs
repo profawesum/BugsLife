@@ -10,9 +10,6 @@ public class Grapple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (connectable && Input.GetButton("Fire3")) { 
-            
-        }
     }
 
 

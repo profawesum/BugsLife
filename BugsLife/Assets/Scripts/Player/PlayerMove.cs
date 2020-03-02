@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
             gravity = 0;
         }
         else {
-            gravity = 175;
+            gravity = 300;
         }
 
         //checks to see if the player is grounded

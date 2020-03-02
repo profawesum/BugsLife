@@ -37,16 +37,21 @@ public class PlayerMove : MonoBehaviour
 
 
         //making it so the player can climb walls
-        if (climbable) { 
-            //raycast into the wall that the player is trying to climb to make sure they are still on a wall
-            //when it no longer hits something make it so there is a jump force.
+        if (climbable)
+        {
+            forward = transform.TransformDirection(Vector3.up);
+            curSpeedX = canMove ? speed * Input.GetAxis("Vertical") : 0;
+            curSpeedY = canMove ? speed * Input.GetAxis("Horizontal") : 0;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+            gravity = 0;
+        }
+        else {
+            gravity = 175;
         }
 
         //checks to see if the player is grounded
         if (characterController.isGrounded)
         {
-            // We are grounded, so recalculate move direction based on axes
-          
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpSpeed;
@@ -54,9 +59,6 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
         moveDirection.y -= gravity * Time.deltaTime;
 
         // Move the controller
@@ -78,6 +80,15 @@ public class PlayerMove : MonoBehaviour
         //checks to see if they are colliding with a climable object
         if (other.tag == "Climbable") {
             climbable = true;
+        }
+    }
+
+    //when the player leaves the climbable zone
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Climbable"){
+            climbable = false;
+            moveDirection.y = jumpSpeed;
         }
     }
 }

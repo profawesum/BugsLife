@@ -89,6 +89,7 @@ public class PlayerMove : MonoBehaviour
         if(other.tag == "Climbable"){
             climbable = false;
             moveDirection.y = jumpSpeed;
-        }
+        }  
+            
     }
 }

@@ -52,5 +52,8 @@ public class PlayerManager : MonoBehaviour
             health -= 1;
             healthText.text = "Health: " + health.ToString();
         }
+        if (other.tag == "KillZone") {
+            health = 0;
+        }
     }
 }

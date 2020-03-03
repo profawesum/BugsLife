@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8175646f39ee6e24a90cda657d4bf26f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: war times
+  fontNames:
+  - war times
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0e04b069725246742b0cb34f1239e018, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

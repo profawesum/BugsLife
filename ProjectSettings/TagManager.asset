@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - KillZone
   - Grapple
+  - EnemyHitBox
   layers:
   - Default
   - TransparentFX

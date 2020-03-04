@@ -21,6 +21,8 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        Screen.SetResolution(720, 480, true);
+
         characterController = GetComponent<CharacterController>();
         rotation.y = transform.eulerAngles.y;
     }
@@ -45,7 +47,11 @@ public class PlayerMove : MonoBehaviour
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
             gravity = 0;
         }
-        else {
+        if (Input.GetButton("Fire3")) {
+            gravity = 800;
+        }
+        else
+        {
             gravity = 300;
         }
 

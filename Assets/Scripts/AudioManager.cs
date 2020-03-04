@@ -8,7 +8,6 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-    public GameObject houseWorldBase;
     public Sound[] Sounds;
     public static AudioManager instance;
 
@@ -17,13 +16,13 @@ public class AudioManager : MonoBehaviour
         float RandNum = UnityEngine.Random.Range(0, 100);
         if (RandNum <= 74)
         {
-            Play("Wind");
+        //    Play("Wind");
         }
         else if (RandNum > 75)
         {
-            Play("BusyAmbience");
+        //    Play("BusyAmbience");
         }
-        
+
     }
     // Use this for initialization
     void Awake()
@@ -38,7 +37,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        string CurrentScene = SceneManager.GetActiveScene().name;
 
         foreach (Sound i in Sounds)
         {

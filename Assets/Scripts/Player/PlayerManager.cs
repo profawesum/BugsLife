@@ -24,14 +24,6 @@ public class PlayerManager : MonoBehaviour
             Application.LoadLevel(Application.loadedLevel);
         }
 
-        //DEBUG STUFF, DELETE LATER
-        //Used to damage the player
-        if (Input.GetKeyDown(KeyCode.E)) {
-            health -= 1;
-            healthText.text = "Health: " + health.ToString();
-        }
-        //END WHAT SHOULD BE DELETED LATER
-
         //setting up some raycasting stuffs
         RaycastHit hit;
 

@@ -33,6 +33,6 @@ public class ThirdPersonCamera : MonoBehaviour
             currentPos = (directionNormalized * (hit.distance - collisionOffset));
         }
 
-        transform.localPosition = Vector3.Lerp(transform.localPosition, currentPos, Time.deltaTime * 15f);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, currentPos, Time.fixedDeltaTime * 0.3f);
     }
 }

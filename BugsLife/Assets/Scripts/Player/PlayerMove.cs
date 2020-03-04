@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        Screen.SetResolution(720, 480, true);
         characterController = GetComponent<CharacterController>();
         rotation.y = transform.eulerAngles.y;
     }
@@ -45,9 +46,19 @@ public class PlayerMove : MonoBehaviour
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
             gravity = 0;
         }
-        else {
-            gravity = 300;
+        if (!characterController.isGrounded) {
+
+            if (Input.GetButton("Fire3")) {
+                gravity = 800;
+            }
+            else
+            {
+                gravity = 300;
+
+            }
         }
+
+        
 
         //checks to see if the player is grounded
         if (characterController.isGrounded)

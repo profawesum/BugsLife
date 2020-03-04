@@ -10,9 +10,6 @@ public class CollectibleManager : MonoBehaviour
     public int basicGemCount;
     public Text gemCountText;
 
-    public Text antCountText;
-    public int antCount;
-
     
     private void OnTriggerEnter(Collider other)
     {
@@ -21,26 +18,13 @@ public class CollectibleManager : MonoBehaviour
             Destroy(other.gameObject);
             updateGemCount();
         }
-
-        //if the player finds a lost ant
-        if (other.tag == "LostAnt") {
-            Destroy(other.gameObject);
-            updateLostAntCount();
-        }
     }
 
-
-    //finds the lost ant
-    public void updateLostAntCount() {
-        antCount++;
-        antCountText.text = "Ants Found: " + antCount.ToString();
-        
-    }
 
     //increase the value of the gems
     public void updateGemCount() {
         basicGemCount++;
-        gemCountText.text = "JellyBeans: " + basicGemCount.ToString();
+        gemCountText.text = "Gems: " + basicGemCount.ToString();
     }
 
 }

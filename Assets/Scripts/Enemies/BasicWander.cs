@@ -50,4 +50,13 @@ public class BasicWander : MonoBehaviour
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
     }
+
+
+   //when an enemy collides with the player load the game over scene.
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player") {
+            Application.LoadLevel("GameOver");
+        }
+    }
 }

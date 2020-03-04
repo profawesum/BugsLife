@@ -52,15 +52,8 @@ public class PlayerManager : MonoBehaviour
             health -= 1;
             healthText.text = "Health: " + health.ToString();
         }
-        //kills the player
         if (other.tag == "KillZone") {
             health = 0;
-        }
-        //health pickup
-        if (other.tag == "health" && health < 10) {
-            health++;
-            healthText.text = "Health: " + health.ToString();
-            Destroy(other.gameObject);
         }
     }
 }

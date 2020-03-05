@@ -13,7 +13,10 @@ public class DissappearingPlatforms : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
+        if (timer >= 2) { 
+            //TODO:
+            //Make it look like it is about to disappear
+        }
         if (timer >= 5) {
             this.GetComponent<MeshRenderer>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;

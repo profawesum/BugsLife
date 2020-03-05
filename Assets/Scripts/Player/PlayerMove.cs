@@ -19,6 +19,8 @@ public class PlayerMove : MonoBehaviour
     public bool canMove = true;
     public bool climbable = false;
 
+    public float jumpTime;
+
     void Start()
     {
         Screen.SetResolution(720, 480, true);
@@ -52,19 +54,23 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            gravity = 300;
+            gravity = 350;
         }
 
-        //checks to see if the player is grounded
-        if (characterController.isGrounded)
-        {
-            if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = jumpSpeed;
+        //jump functionality
+        if (Input.GetButton("Jump")){
+            jumpTime+= 1 * Time.deltaTime;
+            if(jumpTime <= 0.2f) {
+                 moveDirection.y = jumpSpeed;
             }
-
         }
 
+        //resets the jump counter
+        if (characterController.isGrounded) {
+            jumpTime = 0;
+        }
+
+        //applies gravity
         moveDirection.y -= gravity * Time.deltaTime;
 
         // Move the controller

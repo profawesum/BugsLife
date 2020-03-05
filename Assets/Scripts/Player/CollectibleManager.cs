@@ -70,7 +70,7 @@ public class CollectibleManager : MonoBehaviour
     //increase the value of the gems
     public void updateGemCount() {
         basicGemCount++;
-        gemCountText.text = "Gems: " + basicGemCount.ToString();
+        gemCountText.text = basicGemCount.ToString();
     }
 
 }

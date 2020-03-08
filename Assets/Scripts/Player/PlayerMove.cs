@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        #region ui stuff
 
         speedTimer -= Time.deltaTime;
         SpeedBoostImage.fillAmount = speedTimer / 5;
@@ -59,7 +60,7 @@ public class PlayerMove : MonoBehaviour
             jumpSpeed = 25.0f;
         }
 
-
+        #endregion
         //various movement settings
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);

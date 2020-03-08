@@ -31,6 +31,10 @@ public class PlayerMove : MonoBehaviour
     public Image SpeedBoostImage;
     public Image JumpBoostImage;
 
+    public GameObject playerModel;
+
+    public float hitTimer;
+
     void Start()
     {
         Screen.SetResolution(720, 480, true);
@@ -39,8 +43,22 @@ public class PlayerMove : MonoBehaviour
         rotation.y = transform.eulerAngles.y;
     }
 
+
+    public void hitByEnemy() {
+        playerModel.SetActive(false);
+        hitTimer = 0.2f;
+    } 
+
+
     void Update()
     {
+
+        hitTimer -= Time.deltaTime;
+        if (hitTimer < 0) {
+            playerModel.SetActive(true);
+            hitTimer = 0;
+        }
+
         #region ui stuff
 
         speedTimer -= Time.deltaTime;

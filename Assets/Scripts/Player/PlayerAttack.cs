@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] PlayerManager manager;
+    public CharacterController controller;
+    Vector3 moveDirection;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "EnemyHitBox") {
             Destroy(other.transform.parent.gameObject);
-            manager.health++;
+            //manager.health++;
         }
     }
 

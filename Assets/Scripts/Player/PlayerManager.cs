@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
 
     public Image healthImage;
 
+    [SerializeField] PlayerMove playerMove;
+
     //setting up the ui in the first frame
     private void Start()
     {
@@ -51,6 +53,7 @@ public class PlayerManager : MonoBehaviour
             health -= 1;
             //FindObjectOfType<AudioManager>().Play("Hit");
             healthImage.fillAmount -= 0.1f;
+            playerMove.hitByEnemy();
         }
         if (other.tag == "KillZone") {
             health = 0;

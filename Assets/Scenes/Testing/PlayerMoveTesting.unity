@@ -2543,6 +2543,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5407424875188986176}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &844063362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5407424874346922953, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5407424875188986176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844063361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6004173c640aeae4892eb096a5b2ab71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &844063364 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 5407424874346922946, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5407424875188986176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &844063365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5407424874346922947, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5407424875188986176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844063361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c859f1f0fe2b4a419183fd98dd08ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &844063369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5407424874346922951, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
@@ -6805,6 +6835,11 @@ PrefabInstance:
       propertyPath: JumpBoostImage
       value: 
       objectReference: {fileID: 2093448181}
+    - target: {fileID: 5407424874346922947, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+        type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 2100506504}
     - target: {fileID: 5407424874346922949, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6870,6 +6905,11 @@ PrefabInstance:
       propertyPath: healthImage
       value: 
       objectReference: {fileID: 1343668257}
+    - target: {fileID: 5407424874346922953, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+        type: 3}
+      propertyPath: playerMove
+      value: 
+      objectReference: {fileID: 844063365}
     - target: {fileID: 5407424875597307939, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6885,6 +6925,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5407424875672296368, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 844063364}
+    - target: {fileID: 5407424875672296368, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 844063362}
     - target: {fileID: 5407424875887332052, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
         type: 3}
       propertyPath: m_Text

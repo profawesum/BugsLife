@@ -61,6 +61,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         #endregion
+
+
         //various movement settings
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -78,12 +80,13 @@ public class PlayerMove : MonoBehaviour
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
             gravity = 0;
         }
+
         if (Input.GetButton("Fire3")) {
             gravity = 800;
         }
-        else
+        else if(!climbable)
         {
-            gravity = 350;
+            gravity = 600;
         }
 
         //jump functionality

@@ -48,6 +48,9 @@ public class PlayerManager : MonoBehaviour
     {
         //if the player has hit an enemy deal some damage
         if (other.tag == "Enemy") {
+            health -= 1;
+            FindObjectOfType<AudioManager>().Play("Hit");
+            healthText.text = "Health: " + health.ToString();
             healthImage.fillAmount -= 0.1f;
             health--;
             //healthText.text = "Health: " + health.ToString();

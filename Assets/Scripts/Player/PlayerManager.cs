@@ -9,10 +9,13 @@ public class PlayerManager : MonoBehaviour
     public Text healthText;
     public int health = 10;
 
+    public Image healthImage;
+
     //setting up the ui in the first frame
     private void Start()
     {
-        healthText.text = "Health: " + health.ToString();
+        healthImage.fillAmount = 1;
+    //    healthText.text = "Health: " + health.ToString();
     }
 
     // Update is called once per frame
@@ -41,11 +44,22 @@ public class PlayerManager : MonoBehaviour
     {
         //if the player has hit an enemy deal some damage
         if (other.tag == "Enemy") {
-            health -= 1;
-            healthText.text = "Health: " + health.ToString();
+            healthImage.fillAmount -= 0.1f;
+            health--;
+            //healthText.text = "Health: " + health.ToString();
         }
         if (other.tag == "KillZone") {
             health = 0;
+        }
+        if (other.tag == "healthPickup")
+        {
+            if (health < 10)
+            {
+                Debug.Log("Hit the health pickup");
+                health++;
+                healthImage.fillAmount += 0.1f;
+                Destroy(other.gameObject);
+            }
         }
     }
 }

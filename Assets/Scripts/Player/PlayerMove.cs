@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -20,6 +21,15 @@ public class PlayerMove : MonoBehaviour
     public bool climbable = false;
 
     public float jumpTime;
+    public float fasterSpeed = 10;
+    public float originalSpeed = 7.5f;
+    public float speedTimer = 0;
+
+    public float fasterJumpSpeed = 35;
+    public float jumpBoostTimer;
+
+    public Image SpeedBoostImage;
+    public Image JumpBoostImage;
 
     void Start()
     {
@@ -31,6 +41,24 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+
+        speedTimer -= Time.deltaTime;
+        SpeedBoostImage.fillAmount = speedTimer / 5;
+
+        if (speedTimer <= 0) {
+            speedTimer = 0;
+            speed = 7.5f;
+        }
+
+        jumpBoostTimer -= Time.deltaTime;
+        JumpBoostImage.fillAmount = jumpBoostTimer / 5;
+
+        if (jumpBoostTimer <= 0)
+        {
+            jumpBoostTimer = 0;
+            jumpSpeed = 25.0f;
+        }
+
 
         //various movement settings
         Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -89,6 +117,18 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Speed") {
+            speed = fasterSpeed;
+            speedTimer = 5;
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "JumpBoost")
+        {
+            jumpSpeed = fasterJumpSpeed;
+            jumpBoostTimer = 5;
+            Destroy(other.gameObject);
+        }
+
         //checks to see if they are colliding with a climable object
         if (other.tag == "Climbable") {
             climbable = true;

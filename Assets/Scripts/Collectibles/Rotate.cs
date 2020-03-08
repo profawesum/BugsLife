@@ -9,6 +9,8 @@ public class Rotate : MonoBehaviour
     public GameObject[] jellybeans;
 
     public GameObject[] healthPickup;
+    public GameObject[] speedBoost;
+    public GameObject[] jumpBoost;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +18,8 @@ public class Rotate : MonoBehaviour
         //find all the jellybeans
         jellybeans = GameObject.FindGameObjectsWithTag("Gem");
         healthPickup = GameObject.FindGameObjectsWithTag("healthPickup");
+        speedBoost = GameObject.FindGameObjectsWithTag("Speed");
+        jumpBoost = GameObject.FindGameObjectsWithTag("JumpBoost");
         
         //for each jellybean rotate it
         foreach (GameObject go in jellybeans)
@@ -23,6 +27,15 @@ public class Rotate : MonoBehaviour
             go.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
         }
         foreach (GameObject go in healthPickup) {
+            go.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
+        }
+        foreach (GameObject go in speedBoost)
+        {
+            go.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
+        }
+
+        foreach (GameObject go in jumpBoost)
+        {
             go.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
         }
     }

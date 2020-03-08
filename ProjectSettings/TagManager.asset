@@ -11,6 +11,8 @@ TagManager:
   - Grapple
   - EnemyHitBox
   - healthPickup
+  - Speed
+  - JumpBoost
   layers:
   - Default
   - TransparentFX

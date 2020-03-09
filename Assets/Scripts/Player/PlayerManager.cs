@@ -29,9 +29,10 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         //load back into the menu when escape is hit
-        //if (Input.GetKeyDown(KeyCode.Escape)) {
-        //    Application.LoadLevel(0);
-        //}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel(0);
+        }
 
         //if the player should be dead
         if (health <= 0) {

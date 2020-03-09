@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1565285093}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &12207341
@@ -1025,6 +1025,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 65
   jellybeans: []
+  healthPickup: []
+  speedBoost: []
+  jumpBoost: []
 --- !u!1 &544428589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,8 +2740,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6004173c640aeae4892eb096a5b2ab71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
   health: 10
+  healthImage: {fileID: 0}
+  healthGO: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!114 &1605760098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2788,6 +2793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c859f1f0fe2b4a419183fd98dd08ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectManager: {fileID: 0}
   speed: 7.5
   jumpSpeed: 150
   gravity: 300
@@ -2797,6 +2803,18 @@ MonoBehaviour:
   canMove: 1
   climbable: 0
   jumpTime: 0
+  fasterSpeed: 10
+  originalSpeed: 7.5
+  speedTimer: 0
+  fasterJumpSpeed: 35
+  jumpBoostTimer: 0
+  SpeedBoostImage: {fileID: 0}
+  JumpBoostImage: {fileID: 0}
+  JumpBoost: {fileID: 0}
+  SpeedBoost: {fileID: 0}
+  playerModel: {fileID: 0}
+  resetPlayerPos: 0
+  hitTimer: 0
 --- !u!65 &1605760101
 BoxCollider:
   m_ObjectHideFlags: 0

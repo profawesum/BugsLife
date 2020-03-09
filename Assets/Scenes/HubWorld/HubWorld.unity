@@ -4406,6 +4406,11 @@ PrefabInstance:
       propertyPath: ableToAcces
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4657475620410022717, guid: 9b9a21adc934e924087aeab639946f77,
+        type: 3}
+      propertyPath: levelToLoad
+      value: Level01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b9a21adc934e924087aeab639946f77, type: 3}
 --- !u!1001 &5166301506100219988

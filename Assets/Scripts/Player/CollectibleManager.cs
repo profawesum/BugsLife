@@ -36,7 +36,9 @@ public class CollectibleManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //colliding with a gem calls the function to update the amount of gems the player has
-        if (other.tag == "Gem") {
+        if (other.tag == "Gem") 
+        {
+            FindObjectOfType<AudioManager>().Play("Pickup");
             Destroy(other.gameObject);
             updateGemCount();
         }
@@ -48,7 +50,9 @@ public class CollectibleManager : MonoBehaviour
             updateAntCount();
         }
         //collides with the main collectible
-        if (other.tag == "mainCollectible") {
+        if (other.tag == "mainCollectible") 
+        {
+            FindObjectOfType<AudioManager>().Play("Click");
             Destroy(other.gameObject);
             updateMainCollectible();
         }

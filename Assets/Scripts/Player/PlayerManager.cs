@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         //load back into the menu when escape is hit
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Menu"))
         {
             Application.LoadLevel(0);
         }

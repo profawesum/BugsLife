@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
 
   //  public Text healthText;
-    public int health = 10;
+    public int health = 3;
 
     public Image healthImage;
     public GameObject healthGO;
@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour
         if (health <= 0) {
             //reload the scene
             playerMove.resetPos();
-            health = 10;
+            health = 3;
             healthImage.fillAmount = 1;
         }
 
@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour
         if (other.tag == "Enemy") {
             health -= 1;
             //FindObjectOfType<AudioManager>().Play("Hit");
-            healthImage.fillAmount -= 0.1f;
+            healthImage.fillAmount -= 0.33f;
             playerMove.hitByEnemy();
         }
         if (other.tag == "KillZone") {
@@ -69,11 +69,11 @@ public class PlayerManager : MonoBehaviour
         if (other.tag == "healthPickup")
         {
             //if the player has less than max health gain 1 health
-            if (health < 10)
+            if (health < 3)
             {
                 Debug.Log("Hit the health pickup");
                 health++;
-                healthImage.fillAmount += 0.1f;
+                healthImage.fillAmount += 0.33f;
                 Destroy(other.gameObject);
             }
         }

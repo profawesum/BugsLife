@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
     public Image SpeedBoost;
 
     public GameObject playerModel;
-
+    public bool resetPlayerPos;
     public float hitTimer;
 
     void Start()
@@ -64,6 +64,7 @@ public class PlayerMove : MonoBehaviour
 
     public void resetPos() {
         Debug.Log($"Should reset player pos {gameObject.name} was {transform.position}");
+        resetPlayerPos = true;
         transform.position = Vector3.up * 99999;
         Debug.Log($"and now reduced to {transform.position} wow what a great price!");
     }
@@ -154,6 +155,10 @@ public class PlayerMove : MonoBehaviour
             transform.eulerAngles = new Vector2(0, rotation.y);
         }
 
+        if (resetPlayerPos == true) {
+            resetPlayerPos = false;
+            transform.position = Vector3.zero;
+        }
         if (transform.position.y < -5.0f)
         {
             transform.position = Vector3.zero;

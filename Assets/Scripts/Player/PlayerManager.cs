@@ -6,16 +6,21 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
 
-    public Text healthText;
+  //  public Text healthText;
     public int health = 10;
 
     public Image healthImage;
+    public GameObject healthGO;
+
+//    public Vector3 resetPos;
 
     [SerializeField] PlayerMove playerMove;
 
     //setting up the ui in the first frame
     private void Start()
     {
+        healthGO = GameObject.Find("HealthHeart");
+        healthImage = healthGO.GetComponent<Image>();
         healthImage.fillAmount = 1;
     //    healthText.text = "Health: " + health.ToString();
     }
@@ -24,13 +29,16 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         //load back into the menu when escape is hit
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            Application.LoadLevel(0);
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape)) {
+        //    Application.LoadLevel(0);
+        //}
+
         //if the player should be dead
         if (health <= 0) {
             //reload the scene
-            Application.LoadLevel(Application.loadedLevel);
+            playerMove.resetPos();
+            health = 10;
+            healthImage.fillAmount = 1;
         }
 
         //setting up some raycasting stuffs

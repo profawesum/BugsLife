@@ -13,6 +13,7 @@ TagManager:
   - healthPickup
   - Speed
   - JumpBoost
+  - Portal
   layers:
   - Default
   - TransparentFX

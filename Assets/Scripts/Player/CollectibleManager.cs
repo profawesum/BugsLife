@@ -6,6 +6,7 @@ using UnityEngine;
 public class CollectibleManager : MonoBehaviour
 {
     
+
     //counts for the gems
     public int basicGemCount;
     public Text gemCountText;
@@ -21,6 +22,10 @@ public class CollectibleManager : MonoBehaviour
     //the amount of jellybeans left in the level
     public GameObject[] jellyBean;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     private void Update()
     {
@@ -57,6 +62,7 @@ public class CollectibleManager : MonoBehaviour
             updateMainCollectible();
         }
     }
+    
 
 
     //updates the main collectible

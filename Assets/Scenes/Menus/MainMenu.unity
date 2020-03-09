@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1565285093}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &12207341
@@ -1203,6 +1203,26 @@ MonoBehaviour:
   jumpBoost: []
 --- !u!1001 &480436987
 PrefabInstance:
+--- !u!1 &544428589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544428592}
+  - component: {fileID: 544428591}
+  - component: {fileID: 544428590}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &544428590
+MeshRenderer:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -3761,6 +3781,7 @@ MonoBehaviour:
   JumpBoost: {fileID: 0}
   SpeedBoost: {fileID: 0}
   playerModel: {fileID: 0}
+  resetPlayerPos: 0
   hitTimer: 0
 --- !u!65 &1605760101
 BoxCollider:

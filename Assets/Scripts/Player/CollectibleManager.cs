@@ -6,6 +6,7 @@ using UnityEngine;
 public class CollectibleManager : MonoBehaviour
 {
     
+
     //counts for the gems
     public int basicGemCount;
     public Text gemCountText;
@@ -21,6 +22,10 @@ public class CollectibleManager : MonoBehaviour
     //the amount of jellybeans left in the level
     public GameObject[] jellyBean;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     private void Update()
     {
@@ -33,26 +38,7 @@ public class CollectibleManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //colliding with a gem calls the function to update the amount of gems the player has
-        if (other.tag == "Gem") {
-            Destroy(other.gameObject);
-            updateGemCount();
-        }
-
-        //colliding with another ant collects them
-        if (other.tag == "Ant")
-        {
-            Destroy(other.gameObject);
-            updateAntCount();
-        }
-        //collides with the main collectible
-        if (other.tag == "mainCollectible") {
-            Destroy(other.gameObject);
-            updateMainCollectible();
-        }
-    }
+    
 
 
     //updates the main collectible

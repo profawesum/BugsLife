@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
+    [SerializeField] CollectibleManager collectManager;
+
     public float speed = 7.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -28,8 +30,10 @@ public class PlayerMove : MonoBehaviour
     public float fasterJumpSpeed = 35;
     public float jumpBoostTimer;
 
-    public Image SpeedBoostImage;
-    public Image JumpBoostImage;
+    public GameObject SpeedBoostImage;
+    public GameObject JumpBoostImage;
+    public Image JumpBoost;
+    public Image SpeedBoost;
 
     public GameObject playerModel;
 
@@ -37,6 +41,15 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+
+        collectManager = GameObject.Find("CollectibleManager").GetComponent<CollectibleManager>();
+        //finding the images
+        JumpBoostImage = GameObject.Find("Jump");
+        JumpBoost = JumpBoostImage.GetComponent<Image>();
+        //finding the images
+        SpeedBoostImage = GameObject.Find("Speed");
+        SpeedBoost = SpeedBoostImage.GetComponent<Image>();
+
         Screen.SetResolution(720, 480, true);
 
         characterController = GetComponent<CharacterController>();
@@ -47,8 +60,13 @@ public class PlayerMove : MonoBehaviour
     public void hitByEnemy() {
         playerModel.SetActive(false);
         hitTimer = 0.2f;
-    } 
+    }
 
+    public void resetPos() {
+        Debug.Log($"Should reset player pos {gameObject.name} was {transform.position}");
+        transform.position = Vector3.up * 99999;
+        Debug.Log($"and now reduced to {transform.position} wow what a great price!");
+    }
 
     void Update()
     {
@@ -62,7 +80,7 @@ public class PlayerMove : MonoBehaviour
         #region ui stuff
 
         speedTimer -= Time.deltaTime;
-        SpeedBoostImage.fillAmount = speedTimer / 5;
+        SpeedBoost.fillAmount = speedTimer / 5;
 
         if (speedTimer <= 0) {
             speedTimer = 0;
@@ -70,7 +88,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         jumpBoostTimer -= Time.deltaTime;
-        JumpBoostImage.fillAmount = jumpBoostTimer / 5;
+        JumpBoost.fillAmount = jumpBoostTimer / 5;
 
         if (jumpBoostTimer <= 0)
         {
@@ -135,10 +153,20 @@ public class PlayerMove : MonoBehaviour
             playerCameraParent.localRotation = Quaternion.Euler(rotation.x, 0, 0);
             transform.eulerAngles = new Vector2(0, rotation.y);
         }
+
+        if (transform.position.y < -5.0f)
+        {
+            transform.position = Vector3.zero;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "KillZone")
+        {
+            resetPos();
+        }
         if (other.tag == "Speed") {
             speed = fasterSpeed;
             speedTimer = 5;
@@ -149,6 +177,26 @@ public class PlayerMove : MonoBehaviour
             jumpSpeed = fasterJumpSpeed;
             jumpBoostTimer = 5;
             Destroy(other.gameObject);
+        }
+
+        //colliding with a gem calls the function to update the amount of gems the player has
+        if (other.tag == "Gem")
+        {
+            Destroy(other.gameObject);
+            collectManager.updateGemCount();
+        }
+
+        //colliding with another ant collects them
+        if (other.tag == "Ant")
+        {
+            Destroy(other.gameObject);
+            collectManager.updateAntCount();
+        }
+        //collides with the main collectible
+        if (other.tag == "mainCollectible")
+        {
+            Destroy(other.gameObject);
+            collectManager.updateMainCollectible();
         }
 
         //checks to see if they are colliding with a climable object

@@ -119,7 +119,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         if (Input.GetButton("Fire3")) {
-            gravity = 800;
+            gravity = 1900;
         }
         else if(!climbable)
         {

@@ -180,6 +180,7 @@ MonoBehaviour:
   JumpBoost: {fileID: 0}
   SpeedBoost: {fileID: 0}
   playerModel: {fileID: 4047299346963959525}
+  resetPlayerPos: 0
   hitTimer: 0
 --- !u!143 &5407424874346922946
 CharacterController:
@@ -211,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6004173c640aeae4892eb096a5b2ab71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 3
   healthImage: {fileID: 0}
   healthGO: {fileID: 0}
   playerMove: {fileID: 5407424874346922947}

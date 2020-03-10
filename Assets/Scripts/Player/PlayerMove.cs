@@ -128,7 +128,7 @@ public class PlayerMove : MonoBehaviour
 
         //jump functionality
         if (Input.GetButton("Jump")){
-            jumpTime+= 1 * Time.deltaTime;
+            jumpTime += 1 * Time.deltaTime;
             if(jumpTime <= 0.2f) {
                  moveDirection.y = jumpSpeed;
             }

@@ -24,6 +24,12 @@ public class CollectibleManager : MonoBehaviour
 
     void Awake()
     {
+
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("CollectManager");
+        for (var i = 0; i < temp.Length - 1; i++)
+        {
+            Destroy(this.gameObject);
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 

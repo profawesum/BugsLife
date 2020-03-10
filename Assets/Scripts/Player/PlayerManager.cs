@@ -41,7 +41,7 @@ public class PlayerManager : MonoBehaviour
         {
             if (!menu)
             {
-                Time.timeScale = 0.1f;
+                Time.timeScale = 0.0f;
                 pauseMenuCanvas.enabled = true;
                 menu = true;
             }
@@ -72,6 +72,15 @@ public class PlayerManager : MonoBehaviour
                 //add in the interactible coding 
             }
         }
+    }
+
+
+
+    public void ContinueButton()
+    {
+        Time.timeScale = 1;
+        pauseMenuCanvas.enabled = false;
+        menu = false;
     }
 
     private void OnTriggerEnter(Collider other)

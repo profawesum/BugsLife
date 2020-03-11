@@ -707,7 +707,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5a462a9c1466b504388555277d622f41, type: 3}
+    m_Font: {fileID: 12800000, guid: fe714da8ecf78a243885482142dba9c7, type: 3}
     m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Quit
 --- !u!222 &326626695
@@ -1526,7 +1526,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5a462a9c1466b504388555277d622f41, type: 3}
+    m_Font: {fileID: 12800000, guid: fe714da8ecf78a243885482142dba9c7, type: 3}
     m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
@@ -1536,7 +1536,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Options
 --- !u!222 &658445508
@@ -1698,7 +1698,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 0.13725491}
+    m_NormalColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
     m_HighlightedColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 0.33333334}
     m_PressedColor: {r: 0.22352941, g: 0.29411766, b: 0.29411766, a: 0.5294118}
     m_SelectedColor: {r: 0.29411766, g: 0.29411766, b: 0.22352941, a: 0.7058824}
@@ -2929,6 +2929,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 50845322, guid: 7bd570e5df6c13f4b9b0fa868148b4f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1040820285175233782, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3563,6 +3567,7 @@ MonoBehaviour:
   healthGO: {fileID: 0}
   pauseMenu: {fileID: 0}
   pauseMenuCanvas: {fileID: 0}
+  menu: 0
   playerMove: {fileID: 0}
 --- !u!114 &1605760098
 MonoBehaviour:
@@ -3578,10 +3583,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicGemCount: 0
   gemCountText: {fileID: 0}
-  mainCollectibleCount: 0
-  mainCollectibleText: {fileID: 0}
-  antCount: 0
-  antText: {fileID: 0}
   jellyBean: []
 --- !u!143 &1605760099
 CharacterController:
@@ -3931,7 +3932,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 0.13725491}
+    m_NormalColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
     m_HighlightedColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 0.33333334}
     m_PressedColor: {r: 0.22352941, g: 0.29411766, b: 0.29411766, a: 0.5294118}
     m_SelectedColor: {r: 0.29411766, g: 0.29411766, b: 0.22352941, a: 0.7058824}
@@ -5141,6 +5142,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 56093399}
     m_Modifications:
+    - target: {fileID: 807334020380055119, guid: b8f600710b8d8a440859dd0648cc220b,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: fe714da8ecf78a243885482142dba9c7,
+        type: 3}
+    - target: {fileID: 807334020380055119, guid: b8f600710b8d8a440859dd0648cc220b,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 807334020380055119, guid: b8f600710b8d8a440859dd0648cc220b,
+        type: 3}
+      propertyPath: m_Text
+      value: Play
+      objectReference: {fileID: 0}
     - target: {fileID: 807334021819738216, guid: b8f600710b8d8a440859dd0648cc220b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5251,6 +5268,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 56093402}
+    - target: {fileID: 807334021819738217, guid: b8f600710b8d8a440859dd0648cc220b,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 807334021819738219, guid: b8f600710b8d8a440859dd0648cc220b,
         type: 3}
       propertyPath: m_Name

@@ -78,7 +78,7 @@ public class PlayerManager : MonoBehaviour
     public void ContinueButton()
     {
         Time.timeScale = 1;
-        pauseMenuCanvas.enabled = false;
+        pauseMenu.SetActive(false);
         menu = false;
     }
 

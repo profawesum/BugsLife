@@ -25,8 +25,8 @@ public class CollectibleManager : MonoBehaviour
     private void Start()
     {
         //locking and hiding the cursor
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+     //   Cursor.visible = false;
+      //  Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Awake()
@@ -39,14 +39,14 @@ public class CollectibleManager : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
 
-        //Scene currentScene = SceneManager.GetActiveScene();
-        //string sceneName = currentScene.name;
-        //if (sceneName == "MainMenu")
-        //{
-        //    Debug.Log("Here");
-        //    basicGemCount = 0;
-        //    gemCountText.text = basicGemCount.ToString();
-        //}
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "MainMenu")
+        {
+            Debug.Log("Here");
+            basicGemCount = 0;
+            gemCountText.text = basicGemCount.ToString();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

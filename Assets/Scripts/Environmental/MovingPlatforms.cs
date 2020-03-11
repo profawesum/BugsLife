@@ -12,12 +12,25 @@ public class MovingPlatforms : MonoBehaviour
 
     public Vector3 direction;
 
-    public Vector3 target;
+    public Transform target;
+    public Transform target2;
+    public Transform target1;
 
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(position1 + Mathf.PingPong(Time.time, position2), transform.position.y, transform.position.z);
+        // Move our position a step closer to the target.
+        float step = speed * Time.deltaTime; // calculate distance to move
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+
+        // Check if the position of the cube and sphere are approximately equal.
+        if (Vector3.Distance(transform.position, target.position) < 0.001f)
+        {
+            // Swap the position of the cylinder.
+            target = target2;
+            target2 = target1;
+            target1 = target;
+        }
     }
 }

@@ -29,25 +29,25 @@ public class CollectibleManager : MonoBehaviour
       //  Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Awake()
-    {
-        //makes it so there can only ever be one collectiblemanager object
-        GameObject[] temp = GameObject.FindGameObjectsWithTag("CollectManager");
-        for (var i = 0; i < temp.Length - 1; i++)
-        {
-            Destroy(this.gameObject);
-        }
-        DontDestroyOnLoad(this.gameObject);
+    //void Awake()
+    //{
+    //    //makes it so there can only ever be one collectiblemanager object
+    //    GameObject[] temp = GameObject.FindGameObjectsWithTag("CollectManager");
+    //    for (var i = 0; i < temp.Length - 1; i++)
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
+    //    DontDestroyOnLoad(this.gameObject);
 
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
-        if (sceneName == "MainMenu")
-        {
-            Debug.Log("Here");
-            basicGemCount = 0;
-            gemCountText.text = basicGemCount.ToString();
-        }
-    }
+    //    Scene currentScene = SceneManager.GetActiveScene();
+    //    string sceneName = currentScene.name;
+    //    if (sceneName == "MainMenu")
+    //    {
+    //        Debug.Log("Here");
+    //        basicGemCount = 0;
+    //        gemCountText.text = basicGemCount.ToString();
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

@@ -56,9 +56,10 @@ public class PlayerManager : MonoBehaviour
         if (health <= 0) {
             //reload the scene
             FindObjectOfType<AudioManager>().Play("Bang");
-            playerMove.resetPos();
-            health = 3;
-            healthImage.fillAmount = 1;
+            Application.LoadLevel(Application.loadedLevel);
+            //playerMove.resetPos();
+            //health = 3;
+            //healthImage.fillAmount = 1;
         }
 
         //setting up some raycasting stuffs

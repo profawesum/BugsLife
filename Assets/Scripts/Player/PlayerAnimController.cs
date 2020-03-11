@@ -34,7 +34,13 @@ public class PlayerAnimController : MonoBehaviour
                 animator.SetBool("Running", true);
                 animator.SetBool("Grounded", true);
             }
-            else if(!controller.isGrounded) {
+            else if (playerMove.climbable) {
+                animator.SetBool("Grounded", false);
+                animator.SetBool("Climbing", true);
+                animator.SetBool("Running", false);
+            }
+            else if (!controller.isGrounded)
+            {
                 animator.SetBool("Grounded", false);
                 animator.SetBool("Climbing", false);
                 animator.SetBool("Running", false);

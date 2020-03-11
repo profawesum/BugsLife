@@ -12,6 +12,11 @@ public class PlayerManager : MonoBehaviour
     public Image healthImage;
     public GameObject healthGO;
 
+    public GameObject pauseMenu;
+    public Canvas pauseMenuCanvas;
+
+    public bool menu = false;
+
 //    public Vector3 resetPos;
 
     [SerializeField] PlayerMove playerMove;
@@ -19,6 +24,9 @@ public class PlayerManager : MonoBehaviour
     //setting up the ui in the first frame
     private void Start()
     {
+        pauseMenu = GameObject.Find("PauseMenu");
+        pauseMenuCanvas = pauseMenu.GetComponent<Canvas>();
+        pauseMenuCanvas.enabled = false;
         healthGO = GameObject.Find("HealthHeart");
         healthImage = healthGO.GetComponent<Image>();
         healthImage.fillAmount = 1;
@@ -28,10 +36,21 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //load back into the menu when escape is hit
+        //Pause Menu Functionality
         if (Input.GetButtonDown("Menu"))
         {
-            Application.LoadLevel(0);
+            if (!menu)
+            {
+                Time.timeScale = 0.0f;
+                pauseMenuCanvas.enabled = true;
+                menu = true;
+            }
+            else if (menu) {
+
+                Time.timeScale = 1.0f;
+                pauseMenuCanvas.enabled = false;
+                menu = false;
+            }
         }
 
         //if the player should be dead
@@ -54,6 +73,15 @@ public class PlayerManager : MonoBehaviour
                 //add in the interactible coding 
             }
         }
+    }
+
+
+
+    public void ContinueButton()
+    {
+        Time.timeScale = 1;
+        pauseMenuCanvas.enabled = false;
+        menu = false;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -12,18 +12,24 @@ public class CollectibleManager : MonoBehaviour
     public Text gemCountText;
 
     //counts for the main Collectible
-    public int mainCollectibleCount;
-    public Text mainCollectibleText;
+    //public int mainCollectibleCount;
+    //public Text mainCollectibleText;
 
-    //counts for the ants found
-    public int antCount;
-    public Text antText;
+    ////counts for the ants found
+    //public int antCount;
+    //public Text antText;
 
     //the amount of jellybeans left in the level
     public GameObject[] jellyBean;
 
     void Awake()
     {
+        //makes it so there can only ever be one collectiblemanager object
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("CollectManager");
+        for (var i = 0; i < temp.Length - 1; i++)
+        {
+            Destroy(this.gameObject);
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 

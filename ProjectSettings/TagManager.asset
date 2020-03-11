@@ -14,6 +14,7 @@ TagManager:
   - Speed
   - JumpBoost
   - Portal
+  - CollectManager
   layers:
   - Default
   - TransparentFX

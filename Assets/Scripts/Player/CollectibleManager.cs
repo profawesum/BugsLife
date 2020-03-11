@@ -22,6 +22,13 @@ public class CollectibleManager : MonoBehaviour
     //the amount of jellybeans left in the level
     public GameObject[] jellyBean;
 
+    private void Start()
+    {
+        //locking and hiding the cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Awake()
     {
         //makes it so there can only ever be one collectiblemanager object

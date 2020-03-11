@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing/PlayerMoveTesting.unity
     guid: 97bb36755839e384a8f14d7e7e32198a
+  - enabled: 1
+    path: Assets/Scenes/Testing/House.unity
+    guid: a62bbae1fded59c438c55a3fda222686
   m_configObjects: {}

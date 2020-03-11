@@ -37,6 +37,7 @@ public class PlayerManager : MonoBehaviour
         //if the player should be dead
         if (health <= 0) {
             //reload the scene
+            FindObjectOfType<AudioManager>().Play("Bang");
             playerMove.resetPos();
             health = 3;
             healthImage.fillAmount = 1;
@@ -74,6 +75,7 @@ public class PlayerManager : MonoBehaviour
             //if the player has less than max health gain 1 health
             if (health < 3)
             {
+                FindObjectOfType<AudioManager>().Play("Pickup");
                 Debug.Log("Hit the health pickup");
                 health++;
                 healthImage.fillAmount += 0.33f;

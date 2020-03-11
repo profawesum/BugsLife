@@ -127,7 +127,9 @@ public class PlayerMove : MonoBehaviour
         }
 
         //jump functionality
-        if (Input.GetButton("Jump")){
+        if (Input.GetButton("Jump"))
+        {
+
             jumpTime+= 1 * Time.deltaTime;
             if(jumpTime <= 0.2f) {
                  moveDirection.y = jumpSpeed;
@@ -170,15 +172,19 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.tag == "KillZone")
         {
+            FindObjectOfType<AudioManager>().Play("Bang");
             resetPos();
         }
-        if (other.tag == "Speed") {
+        if (other.tag == "Speed") 
+        {
+            FindObjectOfType<AudioManager>().Play("Pickup");
             speed = fasterSpeed;
             speedTimer = 5;
             Destroy(other.gameObject);
         }
         if (other.tag == "JumpBoost")
         {
+            FindObjectOfType<AudioManager>().Play("Pickup");
             jumpSpeed = fasterJumpSpeed;
             jumpBoostTimer = 5;
             Destroy(other.gameObject);
@@ -187,6 +193,7 @@ public class PlayerMove : MonoBehaviour
         //colliding with a gem calls the function to update the amount of gems the player has
         if (other.tag == "Gem")
         {
+            FindObjectOfType<AudioManager>().Play("Pickup");
             Destroy(other.gameObject);
             collectManager.updateGemCount();
         }
@@ -194,6 +201,7 @@ public class PlayerMove : MonoBehaviour
         //colliding with another ant collects them
         if (other.tag == "Ant")
         {
+            FindObjectOfType<AudioManager>().Play("Bang");
             Destroy(other.gameObject);
             collectManager.updateAntCount();
         }
@@ -205,7 +213,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         //checks to see if they are colliding with a climable object
-        if (other.tag == "Climbable") {
+        if (other.tag == "Climbable") 
+        {
             climbable = true;
         }
     }
@@ -213,7 +222,8 @@ public class PlayerMove : MonoBehaviour
     //when the player leaves the climbable zone
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Climbable"){
+        if(other.tag == "Climbable")
+        {
             climbable = false;
             moveDirection.y = jumpSpeed;
         }  

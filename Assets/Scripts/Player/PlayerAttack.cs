@@ -10,7 +10,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "EnemyHitBox") {
+        if (other.tag == "EnemyHitBox") 
+        {
+            FindObjectOfType<AudioManager>().Play("Bang");
             Destroy(other.transform.parent.gameObject);
             //manager.health++;
         }

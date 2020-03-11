@@ -112,7 +112,7 @@ public class PlayerMove : MonoBehaviour
             curSpeedX = canMove ? speed * Input.GetAxis("Vertical") : 0;
             curSpeedY = canMove ? speed * Input.GetAxis("Horizontal") : 0;
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-            gravity = 0;
+            gravity = 100;
         }
 
         if (Input.GetButton("Fire3")) 
@@ -181,7 +181,7 @@ public class PlayerMove : MonoBehaviour
 
             speed = fasterSpeed;
             speedTimer = 5;
-            Destroy(other.gameObject);
+           // Destroy(other.gameObject);
         }
         if (other.tag == "JumpBoost")
         {
@@ -189,7 +189,7 @@ public class PlayerMove : MonoBehaviour
 
             jumpSpeed = fasterJumpSpeed;
             jumpBoostTimer = 5;
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
 
         //colliding with a gem calls the function to update the amount of gems the player has

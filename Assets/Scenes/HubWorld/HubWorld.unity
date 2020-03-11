@@ -142,6 +142,11 @@ PrefabInstance:
       propertyPath: gravity
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 5407424874346922947, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+        type: 3}
+      propertyPath: jumpSpeed
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5407424874346922951, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2073,6 +2078,85 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 413aa3f0daad60b47943a4d3f7c22b23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d0ba9de9b5cc44e843caf14cec1a59, type: 3}
+--- !u!1 &1036971243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036971246}
+  - component: {fileID: 1036971245}
+  - component: {fileID: 1036971244}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1036971244
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036971243}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1036971245
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036971243}
+  m_Mesh: {fileID: 0}
+--- !u!4 &1036971246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036971243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.038015, y: 9.13123, z: -10.468241}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085735804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,6 +2207,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Pickup
     Clip: {fileID: 8300000, guid: c62df4976fd543846925b5a793408d2e, type: 3}
+    vol: 0.1395
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: JumpB
+    Clip: {fileID: 8300000, guid: 1a59b1575c16fa641ab901a2b28eb235, type: 3}
+    vol: 0.1395
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpeedB
+    Clip: {fileID: 8300000, guid: 8043ad20764894b47b1f1cf9ead8460b, type: 3}
     vol: 0.1395
     pit: 1
     loop: 0

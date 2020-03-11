@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] CollectibleManager collectManager;
 
     public float speed = 7.5f;
-    public float jumpSpeed = 8.0f;
+    public float jumpSpeed = 7.5f;
     public float gravity = 20.0f;
     public Transform playerCameraParent;
     public float lookSpeed = 2.0f;
@@ -172,14 +172,16 @@ public class PlayerMove : MonoBehaviour
         }
         if (other.tag == "Speed") 
         {
-            FindObjectOfType<AudioManager>().Play("Pickup");
+            FindObjectOfType<AudioManager>().Play("SpeedB");
+
             speed = fasterSpeed;
             speedTimer = 5;
             Destroy(other.gameObject);
         }
         if (other.tag == "JumpBoost")
         {
-            FindObjectOfType<AudioManager>().Play("Pickup");
+            FindObjectOfType<AudioManager>().Play("JumpB");
+
             jumpSpeed = fasterJumpSpeed;
             jumpBoostTimer = 5;
             Destroy(other.gameObject);

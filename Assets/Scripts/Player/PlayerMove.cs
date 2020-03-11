@@ -63,10 +63,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     public void resetPos() {
-        Debug.Log($"Should reset player pos {gameObject.name} was {transform.position}");
         resetPlayerPos = true;
-        transform.position = Vector3.up * 99999;
-        Debug.Log($"and now reduced to {transform.position} wow what a great price!");
     }
 
     void Update()

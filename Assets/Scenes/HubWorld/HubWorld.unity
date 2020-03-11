@@ -328,7 +328,7 @@ PrefabInstance:
     - target: {fileID: 7982601922371294980, guid: f706d4e4db890c14aa16cfeb406ee5b1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7982601922371294980, guid: f706d4e4db890c14aa16cfeb406ee5b1,
         type: 3}
@@ -573,6 +573,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 24.166538, y: 25.558495, z: 12.990846}
   m_Center: {x: 0.088610195, y: 12.774887, z: 1.4339718}
+--- !u!1 &244419946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244419948}
+  - component: {fileID: 244419947}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &244419947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244419946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683637354db160a47a904e8cffb3bed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - name: Hit
+    Clip: {fileID: 8300000, guid: 67f63ad7baa7bb24baacbdc9bd53f08f, type: 3}
+    vol: 1
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bang
+    Clip: {fileID: 8300000, guid: d0c1906a8f3bb2d48a8ef14eda96aefa, type: 3}
+    vol: 0.851
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    Clip: {fileID: 8300000, guid: 44b1ea6c2fc8fb243b1ba5c77b0de2ca, type: 3}
+    vol: 1
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Pickup
+    Clip: {fileID: 8300000, guid: c62df4976fd543846925b5a793408d2e, type: 3}
+    vol: 0.695
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Drop
+    Clip: {fileID: 8300000, guid: 12af80db0c5b5694d9d6540f7e81cabd, type: 3}
+    vol: 0.695
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    Clip: {fileID: 8300000, guid: 8985c5b5727b4a245a237feaa1a217cb, type: 3}
+    vol: 0.695
+    pit: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &244419948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244419946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -301.6892, y: -57.03414, z: -26.93155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278171812
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 2079036270662595887, guid: dbd27aac2917bba46a4e499674897a16,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2079036270662595887, guid: dbd27aac2917bba46a4e499674897a16,
         type: 3}
@@ -1646,7 +1726,7 @@ PrefabInstance:
     - target: {fileID: 3429410680391845489, guid: 5b253b68331b65e43ba1e17f1d86e1d3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3429410680391845489, guid: 5b253b68331b65e43ba1e17f1d86e1d3,
         type: 3}
@@ -2157,86 +2237,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1085735804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1085735806}
-  - component: {fileID: 1085735805}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1085735805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085735804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 683637354db160a47a904e8cffb3bed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sounds:
-  - name: Hit
-    Clip: {fileID: 8300000, guid: 67f63ad7baa7bb24baacbdc9bd53f08f, type: 3}
-    vol: 1
-    pit: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Bang
-    Clip: {fileID: 8300000, guid: 9c212905591c40948afb651f8ba527cf, type: 3}
-    vol: 0.851
-    pit: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Click
-    Clip: {fileID: 8300000, guid: 44b1ea6c2fc8fb243b1ba5c77b0de2ca, type: 3}
-    vol: 1
-    pit: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Pickup
-    Clip: {fileID: 8300000, guid: c62df4976fd543846925b5a793408d2e, type: 3}
-    vol: 0.1395
-    pit: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: JumpB
-    Clip: {fileID: 8300000, guid: 1a59b1575c16fa641ab901a2b28eb235, type: 3}
-    vol: 0.1395
-    pit: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: SpeedB
-    Clip: {fileID: 8300000, guid: 8043ad20764894b47b1f1cf9ead8460b, type: 3}
-    vol: 0.1395
-    pit: 1
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &1085735806
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085735804}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -301.6892, y: -57.03414, z: -26.93155}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1100841370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2282,7 +2282,7 @@ PrefabInstance:
     - target: {fileID: 4834934784748887117, guid: 20a45f8d6827bd944befee1cd21b7218,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4834934784748887117, guid: 20a45f8d6827bd944befee1cd21b7218,
         type: 3}
@@ -2554,7 +2554,7 @@ PrefabInstance:
     - target: {fileID: 2079036270662595887, guid: dbd27aac2917bba46a4e499674897a16,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2079036270662595887, guid: dbd27aac2917bba46a4e499674897a16,
         type: 3}
@@ -3990,7 +3990,7 @@ PrefabInstance:
     - target: {fileID: 1081338883535693706, guid: d30dc0250f6b58e41a015eeb81fc4d72,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1081338883535693706, guid: d30dc0250f6b58e41a015eeb81fc4d72,
         type: 3}
@@ -4778,7 +4778,7 @@ PrefabInstance:
     - target: {fileID: 2079036270662595887, guid: dbd27aac2917bba46a4e499674897a16,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2079036270662595887, guid: dbd27aac2917bba46a4e499674897a16,
         type: 3}
@@ -5004,7 +5004,7 @@ PrefabInstance:
     - target: {fileID: 4657475620410022716, guid: 9b9a21adc934e924087aeab639946f77,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4657475620410022716, guid: 9b9a21adc934e924087aeab639946f77,
         type: 3}
@@ -5088,7 +5088,7 @@ PrefabInstance:
     - target: {fileID: 5166301504793879051, guid: 0a065f44f5ecf5f46beecc07eb7ce238,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5166301504793879051, guid: 0a065f44f5ecf5f46beecc07eb7ce238,
         type: 3}

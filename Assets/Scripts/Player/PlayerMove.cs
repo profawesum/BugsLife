@@ -115,7 +115,9 @@ public class PlayerMove : MonoBehaviour
             gravity = 0;
         }
 
-        if (Input.GetButton("Fire3")) {
+        if (Input.GetButton("Fire3")) 
+        {
+            FindObjectOfType<AudioManager>().Play("Drop");
             gravity = 1900;
         }
         else if(!climbable)
@@ -124,10 +126,13 @@ public class PlayerMove : MonoBehaviour
         }
 
         //jump functionality
-        if (Input.GetButton("Jump")){
+        if (Input.GetButton("Jump"))
+        {
             jumpTime += 1 * Time.deltaTime;
-            if(jumpTime <= 0.2f) {
-                 moveDirection.y = jumpSpeed;
+            if(jumpTime <= 0.2f) 
+            {
+                FindObjectOfType<AudioManager>().Play("Jump");
+                moveDirection.y = jumpSpeed;
             }
         }
 

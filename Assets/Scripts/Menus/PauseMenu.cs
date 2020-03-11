@@ -15,7 +15,10 @@ public class PauseMenu : MonoBehaviour
     }
 
     //quit the game
-    public void QuitButton() {
+    public void QuitButton() 
+    {
+
+        FindObjectOfType<AudioManager>().Play("Click");
 
         Application.Quit();
     }

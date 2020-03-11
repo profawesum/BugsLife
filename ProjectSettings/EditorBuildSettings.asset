@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level01.unity
     guid: 4ce87c7a8c0e3664a8b6decd7a845c6f
   - enabled: 1
+    path: Assets/Scenes/Menus/Game Over.unity
+    guid: 065ba8781444c8541b172a5ba149ee0f
+  - enabled: 1
     path: Assets/Scenes/Testing/PlayerMoveTesting.unity
     guid: 97bb36755839e384a8f14d7e7e32198a
   - enabled: 1

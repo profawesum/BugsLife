@@ -53,7 +53,8 @@ public class PlayerManager : MonoBehaviour
         }
 
         //if the player should be dead
-        if (health <= 0) {
+        if (health <= 0) 
+        {
             //reload the scene
             FindObjectOfType<AudioManager>().Play("Bang");
             playerMove.resetPos();
@@ -65,10 +66,12 @@ public class PlayerManager : MonoBehaviour
         RaycastHit hit;
 
         //used for interactions
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3.5f)){
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3.5f))
+        {
             Debug.Log("Hit something");
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            if (Input.GetButtonDown("Fire2") && hit.transform.tag == "Interactible") { 
+            if (Input.GetButtonDown("Fire2") && hit.transform.tag == "Interactible") 
+            { 
                 //add in the interactible coding 
             }
         }

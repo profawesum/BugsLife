@@ -25,8 +25,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         pauseMenu = GameObject.Find("PauseMenu");
-        pauseMenuCanvas = pauseMenu.GetComponent<Canvas>();
-        pauseMenuCanvas.enabled = false;
+        pauseMenu.SetActive(false);
         healthGO = GameObject.Find("HealthHeart");
         healthImage = healthGO.GetComponent<Image>();
         healthImage.fillAmount = 1;
@@ -42,13 +41,13 @@ public class PlayerManager : MonoBehaviour
             if (!menu)
             {
                 Time.timeScale = 0.0f;
-                pauseMenuCanvas.enabled = true;
+                pauseMenu.SetActive(true);
                 menu = true;
             }
             else if (menu) {
 
                 Time.timeScale = 1.0f;
-                pauseMenuCanvas.enabled = false;
+                pauseMenu.SetActive(false);
                 menu = false;
             }
         }

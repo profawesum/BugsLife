@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CollectibleManager : MonoBehaviour
 {
-    
 
     //counts for the gems
     public int basicGemCount;
@@ -22,6 +22,13 @@ public class CollectibleManager : MonoBehaviour
     //the amount of jellybeans left in the level
     public GameObject[] jellyBean;
 
+    private void Start()
+    {
+        //locking and hiding the cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Awake()
     {
         //makes it so there can only ever be one collectiblemanager object
@@ -31,17 +38,15 @@ public class CollectibleManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
-    }
 
-    private void Update()
-    {
-        //find the amount of jellybeans left
-        jellyBean = GameObject.FindGameObjectsWithTag("Gem");
-
-        if (jellyBean.Length == 0) { 
-            //TODO:
-            //do some stuff to spawn in a main collectible
-        }
+        //Scene currentScene = SceneManager.GetActiveScene();
+        //string sceneName = currentScene.name;
+        //if (sceneName == "MainMenu")
+        //{
+        //    Debug.Log("Here");
+        //    basicGemCount = 0;
+        //    gemCountText.text = basicGemCount.ToString();
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

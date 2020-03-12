@@ -17,7 +17,7 @@ public class TextureAnimator : MonoBehaviour {
 #if UNITY_EDITOR
 		_material = GetComponent<Renderer>().sharedMaterial;
 #else
-		_material = renderer.material;
+		//_material = renderer.material;
 #endif
 		GetComponent<Renderer>().material = _material;
 		_renderer = GetComponent<Renderer>();

@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] CollectibleManager collectManager;
 
     public float speed = 7.5f;
+    public bool Canplay = true;
     public float jumpSpeed = 7.5f;
     public float gravity = 20.0f;
     public Transform playerCameraParent;
@@ -21,7 +22,7 @@ public class PlayerMove : MonoBehaviour
 
     public bool canMove = true;
     public bool climbable = false;
-
+    
     public float jumpTime;
     public float fasterSpeed = 10;
     public float originalSpeed = 7.5f;
@@ -117,7 +118,11 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetButton("Fire3")) 
         {
-            FindObjectOfType<AudioManager>().Play("Drop");
+            if (Canplay == true &&  !characterController.isGrounded)
+            {
+                FindObjectOfType<AudioManager>().Play("Drop");
+                Canplay = false;
+            }
             gravity = 1900;
         }
         else if(!climbable)
@@ -131,7 +136,10 @@ public class PlayerMove : MonoBehaviour
             jumpTime += 1 * Time.deltaTime;
             if(jumpTime <= 0.2f) 
             {
-                FindObjectOfType<AudioManager>().Play("Jump");
+                if (characterController.isGrounded)
+                {
+                    FindObjectOfType<AudioManager>().Play("Jump");
+                }
                 moveDirection.y = jumpSpeed;
             }
         }
@@ -139,6 +147,7 @@ public class PlayerMove : MonoBehaviour
         //resets the jump counter
         if (characterController.isGrounded) {
             jumpTime = 0;
+            Canplay = true;
         }
 
         //applies gravity

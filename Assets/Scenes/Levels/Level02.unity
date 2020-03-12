@@ -1250,6 +1250,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 239966510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &257294856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 807334021476819070, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1903808808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &270011449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7d2101f80e686e146ab855cbe643a359,
@@ -2084,12 +2090,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 49f4ddc4f089cf94991535e664c8b50e,
     type: 3}
   m_PrefabInstance: {fileID: 388620378}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &397502946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 50845321, guid: 7bd570e5df6c13f4b9b0fa868148b4f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1903808808}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &426192384
 GameObject:
@@ -6968,7 +6968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 397502946}
+  m_FirstSelected: {fileID: 257294856}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1098771829

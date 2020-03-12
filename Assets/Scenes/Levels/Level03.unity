@@ -7039,6 +7039,11 @@ PrefabInstance:
       propertyPath: amountOfBeansToUnlock
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4657475620410022717, guid: 9b9a21adc934e924087aeab639946f77,
+        type: 3}
+      propertyPath: levelToLoad
+      value: WinScreen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b9a21adc934e924087aeab639946f77, type: 3}
 --- !u!223 &1973138074 stripped

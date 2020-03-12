@@ -163,7 +163,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (transform.position.y < -5.0f)
         {
-            transform.position = Vector3.zero;
+            Application.LoadLevel(Application.loadedLevel);
         }
 
     }

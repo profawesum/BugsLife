@@ -24,9 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void Retry()
     {
-        NextSceneToLoad = SceneManager.GetActiveScene().buildIndex - 1;
-        FindObjectOfType<AudioManager>().Play("Click");
-        SceneManager.LoadScene(NextSceneToLoad);
+        Application.LoadLevel(0);
     }
 
     public void EndGame()
